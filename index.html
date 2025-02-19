@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
     <div class="container">
         <h1>SVG - Scalable Vector Graphics</h1>
         <img src="images/myfirst.svg" alt="">
+
+        <!-- Embeded SVG directly in HTML -->
         <svg width="400" height="400" viewBox="0 0 400 400">
             <!-- SVG graphic code here -->
             <rect width="400" height="400" fill="#dccd" stroke="#000000" stroke-width="4" rx="28" ry="29" />
             <circle cx="200" cy="200" r="100" fill="#d5000" />
-          </svg>
+        </svg>
+
+
+        <!-- Reuse elements with use -->
+        <svg class="dice" width="400" height="400" viewBox="0 0 400 400">
+            <!-- SVG graphic code here -->
+            <rect width="200" height="200" fill="#dccd" stroke="#000000" stroke-width="4" rxs="28" ry="29" />
+            <circle id="dot" cx="50" cy="50" r="25" fill="#d5000" />
+            <use xlink:href="#dot" x="100" />
+            <use xlink:href="#dot" x="100" y="100" />
+            <use xlink:href="#dot" y="100" />
+        </svg>
+
+        <!-- Polyline SVG -->
+        <svg width="110" height="160" viewBox="0 0 110 160">
+            <polyline points="10,10 10,50 50,50, 50,100 100,100 100,150" fill="white" stroke="#ef898b"
+                stroke-width="6" />
+        </svg>
+
+        <!-- Defs use SVG -->
+        <svg class="circles" width="400" height="400" viewBox="0 0 400 400">
+            <!-- SVG graphic code here -->
+            <defs>
+                <rect id="box" width="200" height="200" fill="#dccd" stroke="#000000" stroke-width="4" rxs="28" ry="29" />
+            <circle id="point" cx="50" cy="50" r="25" fill="#d5000" />
+            </defs>
+            <use xlink:href="#box"/>
+            <g>
+            <use xlink:href="#point" x="100" y="0"/>
+            <use xlink:href="#point" x="100" y="100"/>
+            <use xlink:href="#point" x="0" y="100"/>
+            <use xlink:href="#point" x="0" y="0"/>
+            <use xlink:href="#point" x="50" y="50"/>
+            </g>
+        </svg>
     </div>
 </body>
+
 </html>
