@@ -7,4 +7,5 @@
 }
 .circles:hover g{
     transform: rotate(2turn);
+    fill: rgb(145, 57, 10);
 }

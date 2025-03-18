@@ -11,6 +11,9 @@
 <body>
     <div class="container">
         <h1>SVG - Scalable Vector Graphics</h1>
+        <!-- Embeded SVG -->
+         <img src="images/smily.svg" alt="">
+
         <img src="images/myfirst.svg" alt="">
 
         <!-- Embeded SVG directly in HTML -->
@@ -52,6 +55,30 @@
             <use xlink:href="#point" x="0" y="0"/>
             <use xlink:href="#point" x="50" y="50"/>
             </g>
+        </svg>
+
+        <!-- SVG Gradient -->
+        <svg width="250" height="50" viewBox="0 0 250 50">
+            <defs>
+                <linearGradient id="mygradient">
+                    <stop offset="0%" stop-color="red"/>
+                    <stop offset="50%" stop-color="orange"/>
+                    <stop offset="100%" stop-color="blue"/>
+                </linearGradient>
+            </defs>
+            <rect width="250" height="50" fill="url(#mygradient)"/>
+            <text x="50" y="40" fill="url(#mygradient)" font-size="3rem">Cysron</text>
+        </svg>
+
+        <!-- SVG Pattern and Text -->
+        <svg width="300" height="200" viewBox="0 0 300 200">
+            <defs>
+                <pattern width="300" height="200" id="zigzag" patternUnits="userSpaceOnUse">
+                    <image xlink:href="http://placepattern.com/300/200" />
+
+                </pattern>
+            </defs>
+            <text x="0" y="100" fill="url(#zigzag)" font-size="6rem" font-weight="bold">Cysron</text>
         </svg>
     </div>
 </body>
